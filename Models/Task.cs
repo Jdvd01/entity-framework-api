@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace efCourse.Models;
 
+[Table("Tasks")]
 public class Task
 {
     [Key]
