@@ -1,12 +1,16 @@
 using efCourse;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using DotNetEnv;
+
+Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Configure dbcontext with in-memory database
 // This is useful for testing and development purposes
-builder.Services.AddDbContext<TasksContext>(opt => opt.UseInMemoryDatabase("TasksDb"));
+// builder.Services.AddDbContext<TasksContext>(opt => opt.UseInMemoryDatabase("TasksDb"));
+builder.Services.AddSqlServer<TasksContext>(builder.Configuration.GetConnectionString("DefaultConnection"));
 
 var app = builder.Build();
 
