@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using efCourse;
 
@@ -11,9 +12,11 @@ using efCourse;
 namespace efCourse.Migrations
 {
     [DbContext(typeof(TasksContext))]
-    partial class TasksContextModelSnapshot : ModelSnapshot
+    [Migration("20250604182249_InitialData")]
+    partial class InitialData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,6 +32,7 @@ namespace efCourse.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -76,6 +80,7 @@ namespace efCourse.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TaskPriority")
@@ -97,8 +102,8 @@ namespace efCourse.Migrations
                         {
                             TaskId = new Guid("4ab33fe8-1ee4-48bb-8a98-c82989ec2333"),
                             CategoryId = new Guid("4ab33fe8-1ee4-48bb-8a98-c82989ec2745"),
-                            CreationDate = new DateTime(2025, 6, 4, 0, 0, 0, 0, DateTimeKind.Local),
-                            Deadline = new DateTime(2025, 6, 11, 0, 0, 0, 0, DateTimeKind.Local),
+                            CreationDate = new DateTime(2025, 6, 4, 14, 22, 48, 925, DateTimeKind.Local).AddTicks(1443),
+                            Deadline = new DateTime(2025, 6, 11, 14, 22, 48, 926, DateTimeKind.Local).AddTicks(4946),
                             Description = "Implement the landing page for the new product",
                             TaskPriority = 2,
                             Title = "Develop new feature"
@@ -107,8 +112,8 @@ namespace efCourse.Migrations
                         {
                             TaskId = new Guid("4ab33fe8-1ee4-48bb-8a98-c82989ec2334"),
                             CategoryId = new Guid("4ab33fe8-1ee4-48bb-8a98-c82989ec2746"),
-                            CreationDate = new DateTime(2025, 6, 4, 0, 0, 0, 0, DateTimeKind.Local),
-                            Deadline = new DateTime(2025, 6, 7, 0, 0, 0, 0, DateTimeKind.Local),
+                            CreationDate = new DateTime(2025, 6, 4, 14, 22, 48, 926, DateTimeKind.Local).AddTicks(5415),
+                            Deadline = new DateTime(2025, 6, 7, 14, 22, 48, 926, DateTimeKind.Local).AddTicks(5418),
                             Description = "Buy groceries for the week",
                             TaskPriority = 1,
                             Title = "Shopping"
