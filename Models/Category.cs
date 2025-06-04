@@ -1,6 +1,8 @@
 // using System.ComponentModel.DataAnnotations;
 // using System.ComponentModel.DataAnnotations.Schema;
 
+using System.Text.Json.Serialization;
+
 namespace efCourse.Models;
 
 // [Table("Categories")]
@@ -18,6 +20,7 @@ public class Category
     public int WorkLoad { get; set; }
 
     // relationship
+    [JsonIgnore]
     public virtual ICollection<Task> Tasks { get; set; }
 
 }
