@@ -1,19 +1,19 @@
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+// using System.ComponentModel.DataAnnotations;
+// using System.ComponentModel.DataAnnotations.Schema;
 
 namespace efCourse.Models;
 
-[Table("Tasks")]
+// [Table("Tasks")]
 public class Task
 {
-    [Key]
+    // [Key]
     public Guid TaskId { get; set; }
 
-    [ForeignKey("CategoryId")]
+    // [ForeignKey("CategoryId")]
     public Guid CategoryId { get; set; }
 
-    [Required]
-    [MaxLength(200)]
+    // [Required]
+    // [MaxLength(200)]
     public string Title { get; set; }
     public string Description { get; set; }
     public Priority TaskPriority { get; set; }
@@ -24,7 +24,7 @@ public class Task
 
     // This property is not mapped to the database
     // It can be used in code but will not be persisted
-    [NotMapped]
+    // [NotMapped]
     public string Summary { get; set; }
 }
 
