@@ -1,5 +1,4 @@
 // using efCourse.Models;
-using efCourse.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace efCourse;
@@ -24,6 +23,8 @@ public class TasksContext : DbContext
                 .HasMaxLength(50);
 
             category.Property(c => c.Description);
+
+            category.Property(c => c.WorkLoad);
         });
 
         modelBuilder.Entity<Models.Task>(task =>
@@ -43,6 +44,7 @@ public class TasksContext : DbContext
             task.Property(t => t.TaskPriority);
 
             task.Property(t => t.CreationDate);
+            task.Property(t => t.Deadline);
 
             task.Ignore(t => t.Summary); // Ignore the Summary property, not mapped to the database
         });

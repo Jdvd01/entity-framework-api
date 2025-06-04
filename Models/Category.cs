@@ -15,6 +15,8 @@ public class Category
 
     public string Description { get; set; }
 
+    public int WorkLoad { get; set; }
+
     // relationship
     public virtual ICollection<Task> Tasks { get; set; }
 

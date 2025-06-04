@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using efCourse;
 
@@ -11,9 +12,11 @@ using efCourse;
 namespace efCourse.Migrations
 {
     [DbContext(typeof(TasksContext))]
-    partial class TasksContextModelSnapshot : ModelSnapshot
+    [Migration("20250604180316_WorkLoadColumnCategory")]
+    partial class WorkLoadColumnCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,9 +58,6 @@ namespace efCourse.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("Deadline")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")

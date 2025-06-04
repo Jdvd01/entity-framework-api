@@ -19,6 +19,8 @@ public class Task
     public Priority TaskPriority { get; set; }
     public DateTime CreationDate { get; set; }
 
+    public DateTime Deadline { get; set; }
+
     // relationship
     public virtual Category Category { get; set; }
 
